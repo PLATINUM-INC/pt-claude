@@ -1,0 +1,145 @@
+.language-switcher {
+	display: flex;
+	justify-content: flex-end;
+	&--mobile {
+		display: none;
+	}
+	.wpml-ls {
+		position: relative;
+
+		> ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	.wpml-ls-item-toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		padding: 10px 16px;
+		background: transparent;
+		border: none;
+		border-radius: 8px;
+		font-size: 14px;
+		font-weight: 500;
+		color: $text-color;
+		text-decoration: none;
+		cursor: pointer;
+		transition: background 0.15s ease, color 0.15s ease;
+
+		&:hover,
+		&:focus {
+			background: $muted_color;
+			color: $text-color;
+		}
+
+		&::after {
+			content: '';
+			width: 0;
+			height: 0;
+			border-left: 4px solid transparent;
+			border-right: 4px solid transparent;
+			border-top: 5px solid currentColor;
+			opacity: 0.5;
+			transition: transform 0.2s ease;
+		}
+	}
+
+	.wpml-ls-flag {
+		width: 20px;
+		height: 14px;
+		border-radius: 2px;
+		object-fit: cover;
+	}
+
+	.wpml-ls-sub-menu {
+		position: absolute;
+		right: 0;
+		top: calc(100% + 4px);
+		min-width: 160px;
+		max-height: 0;
+		overflow: hidden;
+		opacity: 0;
+		visibility: hidden;
+		background: $bg-color;
+		border: 1px solid rgba($text-color, 0.08);
+		border-radius: 12px;
+		box-shadow: 0 16px 48px rgba($text-color, 0.12);
+		transition: all 0.2s ease;
+		z-index: 100;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		&[style*="visible"] {
+			max-height: 200px;
+			visibility: visible;
+			opacity: 1;
+			padding: 8px;
+		}
+	}
+
+	.wpml-ls-link {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px 14px;
+		border-radius: 8px;
+		border: none;
+		font-size: 14px;
+		color: $text-color;
+		background-color: $muted_color !important;
+		text-decoration: none;
+		transition: background 0.15s ease, color 0.15s ease;
+
+		&:hover,
+		&:focus {
+			background: $muted_color;
+			color: $text-color;
+		}
+	}
+
+	.wpml-ls-current-language:hover > a,
+	.wpml-ls-legacy-dropdown-click a:hover,
+	.wpml-ls-legacy-dropdown-click a:focus {
+		background: $muted_color;
+		color: $text-color;
+	}
+
+	.wpml-ls-current-language:hover,
+	.wpml-ls-current-language.wpml-ls-open {
+		.wpml-ls-item-toggle::after {
+			transform: rotate(180deg);
+		}
+
+		.wpml-ls-sub-menu {
+			max-height: 200px;
+			visibility: visible;
+			opacity: 1;
+			padding: 8px;
+		}
+	}
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+	.header > .language-switcher {
+		&--mobile {
+			display: block;
+		}
+		.wpml-ls-legacy-dropdown-click {
+			width: fit-content;
+		}
+		.wpml-ls-item-toggle {
+			padding: 8px 30px 8px 12px;
+			font-size: 13px;
+		}
+
+		.wpml-ls-sub-menu {
+			right: 0;
+			left: auto;
+		}
+	}
+}

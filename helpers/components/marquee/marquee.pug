@@ -1,0 +1,5 @@
+mixin marquee(data, mod)
+	.marquee.js-marquee(class=mod)
+		.marquee__inner( aria-hidden="true" ref="inner")
+			+loop_while(7)
+				.marquee__part=data

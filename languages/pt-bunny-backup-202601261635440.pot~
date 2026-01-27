@@ -1,0 +1,202 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PT Bunny\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-23 16:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9; php-8.3.29\n"
+"X-Domain: pt-bunny"
+
+#: template-parts/components/model-card.php:47
+#, php-format
+msgid "%s кг"
+msgstr ""
+
+#: template-parts/components/model-card.php:39
+#, php-format
+msgid "%s лет"
+msgstr ""
+
+#: template-parts/components/model-card.php:43
+#, php-format
+msgid "%s см"
+msgstr ""
+
+#: single-models.php:60 template-parts/components/model-card.php:78
+msgid "1 час"
+msgstr ""
+
+#: single-models.php:67 template-parts/components/model-card.php:85
+msgid "2 часа"
+msgstr ""
+
+#: 404.php:5
+msgid "Back To Homepage"
+msgstr ""
+
+#: 404.php:6
+msgid "Back to Shop"
+msgstr ""
+
+#: inc/theme-setup.php:28
+msgid "Footer Col 1"
+msgstr ""
+
+#: inc/theme-setup.php:29
+msgid "Footer Col 2"
+msgstr ""
+
+#: inc/theme-setup.php:30
+msgid "Footer Col 3"
+msgstr ""
+
+#: inc/theme-setup.php:27
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/theme-setup.php:26
+msgid "Header Menu"
+msgstr ""
+
+#: 404.php:3
+msgid "Oops!"
+msgstr ""
+
+#. Author of the theme
+msgid "Petr"
+msgstr ""
+
+#. Name of the theme
+msgid "PT Bunny"
+msgstr ""
+
+#: single-models.php:89 template-parts/components/model-card.php:62
+#: template-parts/footer/footer.php:105
+msgid "Telegram"
+msgstr ""
+
+#: 404.php:4
+msgid "The Page you are looking for doesn't exist"
+msgstr ""
+
+#. Description of the theme
+msgid "Turn your website into a flirty love letter with PT Bunny"
+msgstr ""
+
+#: single-models.php:94 template-parts/components/model-card.php:67
+#: template-parts/footer/footer.php:110
+msgid "WhatsApp"
+msgstr ""
+
+#: single-models.php:47
+msgid "Вес:"
+msgstr ""
+
+#: single-models.php:43
+msgid "Возраст:"
+msgstr ""
+
+#: single-models.php:51
+msgid "Волосы:"
+msgstr ""
+
+#: template-parts/footer/footer.php:117
+msgid "Все права защищены"
+msgstr ""
+
+#: template-parts/header/header.php:80 template-parts/header/header.php:187
+msgid "Главная"
+msgstr ""
+
+#: template-parts/components/model-card.php:51
+#, php-format
+msgid "Грудь %s"
+msgstr ""
+
+#: single-models.php:49
+msgid "Грудь:"
+msgstr ""
+
+#: template-parts/footer/footer.php:72
+msgid "Категории"
+msgstr ""
+
+#: template-parts/footer/footer.php:101
+msgid "Контакты"
+msgstr ""
+
+#: template-parts/footer/footer.php:42
+msgid "Меню"
+msgstr ""
+
+#: single-models.php:104 template-parts/footer/footer.php:24
+msgid "Метро"
+msgstr ""
+
+#: template-parts/footer/footer.php:55
+msgid "Модели"
+msgstr ""
+
+#: single-models.php:74 template-parts/components/model-card.php:92
+msgid "Ночь"
+msgstr ""
+
+#: single-models.php:87 template-parts/components/model-card.php:60
+#: template-parts/footer/footer.php:103
+msgid "Открыть Telegram"
+msgstr ""
+
+#: single-models.php:92 template-parts/components/model-card.php:65
+#: template-parts/footer/footer.php:108
+msgid "Открыть WhatsApp"
+msgstr ""
+
+#: template-parts/footer/footer.php:26
+msgid "Параметры"
+msgstr ""
+
+#: single-models.php:106
+msgid "Параметры модели"
+msgstr ""
+
+#: single-models.php:137
+msgid "Похожие модели"
+msgstr ""
+
+#: inc/theme-enqueue.php:64
+#, php-format
+msgid "Привет! Я с сайта %s, хочу подобрать девушку."
+msgstr ""
+
+#: template-parts/header/header.php:120 template-parts/header/header.php:228
+msgid "Разное"
+msgstr ""
+
+#: single-models.php:103
+msgid "Район"
+msgstr ""
+
+#: template-parts/footer/footer.php:23
+msgid "Районы"
+msgstr ""
+
+#: single-models.php:45
+msgid "Рост:"
+msgstr ""
+
+#: single-models.php:105 template-parts/footer/footer.php:25
+msgid "Услуги"
+msgstr ""
+
+#: template-parts/header/header.php:69 template-parts/header/header.php:178
+msgid "Фильтры"
+msgstr ""

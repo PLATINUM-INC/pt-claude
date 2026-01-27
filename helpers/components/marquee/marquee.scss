@@ -1,0 +1,40 @@
+.marquee__part {
+	flex-shrink: 0;
+	font-smooth: always;
+	padding-right: 4rem;
+}
+
+.marquee {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: rgba(15, 15, 15, 0);
+	-webkit-text-stroke: 0.2rem rgba(#fff, 0.1);
+	font-size: 11rem;
+	// text-transform: uppercase;
+	font-weight: 900;
+	font-family: sans-serif;
+	overflow: hidden;
+
+	&.marquee--black_mod {
+		color: $white;
+		-webkit-text-stroke: 0.2rem rgba($black_2, 0.4);
+	}
+	&.marquee--blue_mod {
+		color: $white;
+		-webkit-text-stroke: 0.2rem rgba($blue, 0.4);
+	}
+
+	&.opacity--black_mod {
+		top: 40%;
+		opacity: 0.05;
+	}
+}
+
+.marquee__inner {
+	-webkit-font-smoothing: antialiased;
+	width: fit-content;
+	display: flex;
+	flex: auto;
+	flex-direction: row;
+}

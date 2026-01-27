@@ -1,0 +1,88 @@
+@import 'family';
+@import 'reset';
+@import 'fonts';
+@import 'print';
+
+//------------------------------------------------------------base styles
+:root {
+	--full-screen: calc(var(--vh, 1vh) * 100);
+
+	--height-header: 10rem;
+	--height-footer: 10rem;
+	--gl-indent: 5rem;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	position: relative;
+
+	display: flex;
+	height: 100%;
+	font-family: $font_1;
+	font-size: $font_size_base;
+	color: $text-color;
+
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background: $bg-color;
+
+	@supports (display: grid) {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#wpadminbar {
+		position: fixed;
+	}
+}
+
+.wrapper {
+	position: relative;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	height: auto !important;
+
+	overflow-x: hidden;
+}
+
+.base {
+	width: 100%;
+	position: relative;
+	padding: 40px 0 40px;
+
+	flex: 1 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: $accent-color;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+}
+
+// for wp
+
+.editor-styles-wrapper .wp-block {
+	margin-bottom: 5rem;
+}
+html :where(.wp-block) {
+	max-width: 1200px;
+}
+
+.editor-styles-wrapper {
+	overflow-x: hidden;
+}
+
+//------------------------------------------------------------base styles###

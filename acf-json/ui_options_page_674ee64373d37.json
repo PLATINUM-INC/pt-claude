@@ -1,0 +1,22 @@
+{
+    "key": "ui_options_page_674ee64373d37",
+    "title": "Site Settings",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Site Settings",
+    "menu_slug": "site-settings",
+    "parent_slug": "none",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": "",
+    "redirect": 0,
+    "description": "",
+    "update_button": "Обновить",
+    "updated_message": "Настройки были обновлены",
+    "capability": "edit_posts",
+    "data_storage": "options",
+    "post_id": "",
+    "autoload": 0,
+    "modified": 1733224022
+}

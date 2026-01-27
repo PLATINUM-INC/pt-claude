@@ -1,0 +1,48 @@
+//---------------------------------------------fonts
+$font_path: '../fonts/';
+$font_1: 'Inter', sans-serif;
+
+$font_size_base: 1.6rem;
+//---------------------------------------------fonts###
+
+//---------------------------------------------colors
+$text-color: var(--text-color);
+$bg-color: var(--bg-color);
+$accent-color: var(--accent-color);
+$muted_color: var(--muted-color);
+
+
+//---------------------------------------------colors###
+
+//---------------------------------------------z-index
+$z-index: (
+	popup: 101,
+	header: 100,
+	footer: 100,
+);
+//---------------------------------------------z-index###
+
+//---------------------------------------------layout
+$page_width: 1320px;
+
+//---------------------------------------------layout###
+
+//---------------------------------------------global values
+$gl_radius: 1rem;
+$gl_radius_lg: 1.5rem;
+$gl_shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+$gl_shadow_hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+$gl_transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+//---------------------------------------------global values###
+
+//---------------------------------------------media points
+$point_1: 1200px;
+$point_2: 1024px;
+$point_3: 1023.5px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points
+

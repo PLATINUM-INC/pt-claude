@@ -1,0 +1,201 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PT Bunny\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-23 16:15+0000\n"
+"PO-Revision-Date: 2026-01-23 16:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9; php-8.3.29\n"
+"X-Domain: pt-bunny"
+
+#: template-parts/components/model-card.php:47
+#, php-format
+msgid "%s кг"
+msgstr "%s kg"
+
+#: template-parts/components/model-card.php:39
+#, php-format
+msgid "%s лет"
+msgstr "%s years"
+
+#: template-parts/components/model-card.php:43
+#, php-format
+msgid "%s см"
+msgstr "%s cm"
+
+#: single-models.php:60 template-parts/components/model-card.php:78
+msgid "1 час"
+msgstr "1 hour"
+
+#: single-models.php:67 template-parts/components/model-card.php:85
+msgid "2 часа"
+msgstr "2 hours"
+
+#: 404.php:5
+msgid "Back To Homepage"
+msgstr "Back To Homepage"
+
+#: 404.php:6
+msgid "Back to Shop"
+msgstr "Back to Shop"
+
+#: inc/theme-setup.php:28
+msgid "Footer Col 1"
+msgstr "Footer Col 1"
+
+#: inc/theme-setup.php:29
+msgid "Footer Col 2"
+msgstr "Footer Col 2"
+
+#: inc/theme-setup.php:30
+msgid "Footer Col 3"
+msgstr "Footer Col 3"
+
+#: inc/theme-setup.php:27
+msgid "Footer Menu"
+msgstr "Footer Menu"
+
+#: inc/theme-setup.php:26
+msgid "Header Menu"
+msgstr "Header Menu"
+
+#: 404.php:3
+msgid "Oops!"
+msgstr "Oops!"
+
+#. Author of the theme
+msgid "Petr"
+msgstr "Petr"
+
+#. Name of the theme
+msgid "PT Bunny"
+msgstr "PT Bunny"
+
+#: single-models.php:89 template-parts/components/model-card.php:62
+#: template-parts/footer/footer.php:105
+msgid "Telegram"
+msgstr "Telegram"
+
+#: 404.php:4
+msgid "The Page you are looking for doesn't exist"
+msgstr "The Page you are looking for doesn't exist"
+
+#. Description of the theme
+msgid "Turn your website into a flirty love letter with PT Bunny"
+msgstr "Turn your website into a flirty love letter with PT Bunny"
+
+#: single-models.php:94 template-parts/components/model-card.php:67
+#: template-parts/footer/footer.php:110
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: single-models.php:47
+msgid "Вес:"
+msgstr "Weight:"
+
+#: single-models.php:43
+msgid "Возраст:"
+msgstr "Age:"
+
+#: single-models.php:51
+msgid "Волосы:"
+msgstr "Hair:"
+
+#: template-parts/footer/footer.php:117
+msgid "Все права защищены"
+msgstr "All rights reserved"
+
+#: template-parts/header/header.php:80 template-parts/header/header.php:187
+msgid "Главная"
+msgstr "Home"
+
+#: template-parts/components/model-card.php:51
+#, php-format
+msgid "Грудь %s"
+msgstr "Bust %s"
+
+#: single-models.php:49
+msgid "Грудь:"
+msgstr "Bust:"
+
+#: template-parts/footer/footer.php:72
+msgid "Категории"
+msgstr "Categories"
+
+#: template-parts/footer/footer.php:101
+msgid "Контакты"
+msgstr "Contacts"
+
+#: template-parts/footer/footer.php:42
+msgid "Меню"
+msgstr "Menu"
+
+#: single-models.php:104 template-parts/footer/footer.php:24
+msgid "Метро"
+msgstr "Metro"
+
+#: template-parts/footer/footer.php:55
+msgid "Модели"
+msgstr "Models"
+
+#: single-models.php:74 template-parts/components/model-card.php:92
+msgid "Ночь"
+msgstr "Night"
+
+#: single-models.php:87 template-parts/components/model-card.php:60
+#: template-parts/footer/footer.php:103
+msgid "Открыть Telegram"
+msgstr "Open Telegram"
+
+#: single-models.php:92 template-parts/components/model-card.php:65
+#: template-parts/footer/footer.php:108
+msgid "Открыть WhatsApp"
+msgstr "Open WhatsApp"
+
+#: template-parts/footer/footer.php:26
+msgid "Параметры"
+msgstr "Parameters"
+
+#: single-models.php:106
+msgid "Параметры модели"
+msgstr "Model parameters"
+
+#: single-models.php:137
+msgid "Похожие модели"
+msgstr "Similar models"
+
+#: inc/theme-enqueue.php:64
+#, php-format
+msgid "Привет! Я с сайта %s, хочу подобрать девушку."
+msgstr "Hi! I'm from %s, I'd like to choose a girl."
+
+#: template-parts/header/header.php:120 template-parts/header/header.php:228
+msgid "Разное"
+msgstr "Other"
+
+#: single-models.php:103
+msgid "Район"
+msgstr "District"
+
+#: template-parts/footer/footer.php:23
+msgid "Районы"
+msgstr "Districts"
+
+#: single-models.php:45
+msgid "Рост:"
+msgstr "Height:"
+
+#: single-models.php:105 template-parts/footer/footer.php:25
+msgid "Услуги"
+msgstr "Services"
+
+#: template-parts/header/header.php:69 template-parts/header/header.php:178
+msgid "Фильтры"
+msgstr "Filters"
