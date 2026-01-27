@@ -22,6 +22,7 @@
 		.model_gallery_item {
 			position: relative;
 			overflow: hidden;
+			max-height: 80vh;
 
 			img {
 				width: 100%;
