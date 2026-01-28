@@ -170,18 +170,14 @@ function ptb_generate_favicon() {
 
 		$attach_id = wp_insert_attachment($attachment, $filepath);
 
-		if (!is_wp_error($attach_id)) {
-			$attach_data = array(
-				'width'  => $size,
-				'height' => $size,
-				'file'   => $upload_dir['subdir'] . '/' . $filename,
-			);
-			wp_update_attachment_metadata($attach_id, $attach_data);
-			update_option('site_icon', $attach_id);
-		}
-
-	} catch (Exception $e) {
-		error_log('Favicon generation failed: ' . $e->getMessage());
+	if (!is_wp_error($attach_id)) {
+		$attach_data = array(
+			'width'  => $size,
+			'height' => $size,
+			'file'   => $upload_dir['subdir'] . '/' . $filename,
+		);
+		wp_update_attachment_metadata($attach_id, $attach_data);
+		update_option('site_icon', $attach_id);
 	}
 }
 
