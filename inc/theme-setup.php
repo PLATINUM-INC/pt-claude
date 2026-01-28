@@ -76,7 +76,8 @@ function ptb_generate_favicon() {
 	$size = 512;
 	$font = ptb_get_random_font();
 	$font_size = strlen($initials) > 1 ? $size * 0.60 : $size * 0.55;
-	$shape = rand(0, 1) ? 'circle' : 'square';
+	$shapes = ['circle', 'square', 'none'];
+	$shape = $shapes[array_rand($shapes)];
 
 	try {
 		$image = new Imagick();
@@ -92,6 +93,11 @@ function ptb_generate_favicon() {
 			$draw->circle($size / 2, $size / 2, $size / 2, 0);
 			$image->drawImage($draw);
 			$draw->clear();
+		} elseif ($shape === 'none') {
+			// Transparent background, text only
+			$image->newImage($size, $size, new ImagickPixel('transparent'));
+			$image->setImageFormat('png');
+			$text_color = $bg_color; // Use bg_color for text when no background
 		} else {
 			// Square background
 			$image->newImage($size, $size, new ImagickPixel($bg_color));
