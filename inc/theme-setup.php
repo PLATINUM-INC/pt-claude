@@ -6,7 +6,7 @@
 =====================
 */
 
-function theme_setup() {
+function theme_setup(){
 
 	load_theme_textdomain('pt-claude', get_template_directory() . '/languages');
 
