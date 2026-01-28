@@ -35,10 +35,23 @@ add_action('after_setup_theme', 'theme_setup', 0);
 
 function theme_activation() {
 	update_option('posts_per_page', 60);
-	ptb_generate_favicon();
+	// Schedule favicon generation for admin_init when WordPress is fully loaded
+	update_option('ptb_generate_favicon_pending', true);
 }
 
 add_action('after_switch_theme', 'theme_activation');
+
+/**
+ * Generate favicon on admin_init (safer than after_switch_theme)
+ */
+function ptb_maybe_generate_favicon() {
+	if (get_option('ptb_generate_favicon_pending')) {
+		delete_option('ptb_generate_favicon_pending');
+		ptb_generate_favicon();
+	}
+}
+
+add_action('admin_init', 'ptb_maybe_generate_favicon');
 
 /**
  * Get random font from assets/fonts directory
