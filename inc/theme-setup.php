@@ -64,14 +64,26 @@ function ptb_get_random_font() {
 }
 
 /**
- * Generate favicon with site initials using Imagick
+ * Convert hex color to RGB array
+ */
+function ptb_hex_to_rgb($hex) {
+	$hex = ltrim($hex, '#');
+	return [
+		hexdec(substr($hex, 0, 2)),
+		hexdec(substr($hex, 2, 2)),
+		hexdec(substr($hex, 4, 2))
+	];
+}
+
+/**
+ * Generate favicon with site initials using GD
  */
 function ptb_generate_favicon() {
 	if (get_option('site_icon')) {
 		return;
 	}
 
-	if (!class_exists('Imagick')) {
+	if (!function_exists('imagecreatetruecolor')) {
 		return;
 	}
 
@@ -83,59 +95,58 @@ function ptb_generate_favicon() {
 
 	$size = 512;
 	$font = ptb_get_random_font();
-	$font_size = strlen($initials) > 1 ? $size * 0.60 : $size * 0.55;
+	$font_size = strlen($initials) > 1 ? $size * 0.35 : $size * 0.40;
 	$shapes = ['circle', 'square', 'none'];
 	$shape = $shapes[array_rand($shapes)];
 
-	try {
-		$image = new Imagick();
+	// Create image with transparency
+	$image = imagecreatetruecolor($size, $size);
+	imagesavealpha($image, true);
+	imagealphablending($image, false);
 
-		if ($shape === 'circle') {
-			// Transparent background for circle
-			$image->newImage($size, $size, new ImagickPixel('transparent'));
-			$image->setImageFormat('png');
+	$transparent = imagecolorallocatealpha($image, 0, 0, 0, 127);
+	imagefill($image, 0, 0, $transparent);
 
-			// Draw circle
-			$draw = new ImagickDraw();
-			$draw->setFillColor(new ImagickPixel($bg_color));
-			$draw->circle($size / 2, $size / 2, $size / 2, 0);
-			$image->drawImage($draw);
-			$draw->clear();
-		} elseif ($shape === 'none') {
-			// Transparent background, text only
-			$image->newImage($size, $size, new ImagickPixel('transparent'));
-			$image->setImageFormat('png');
-			$text_color = $bg_color; // Use bg_color for text when no background
-		} else {
-			// Square background
-			$image->newImage($size, $size, new ImagickPixel($bg_color));
-			$image->setImageFormat('png');
-		}
+	$bg_rgb = ptb_hex_to_rgb($bg_color);
+	$text_rgb = ptb_hex_to_rgb($text_color);
 
-		$draw = new ImagickDraw();
-		$draw->setFillColor(new ImagickPixel($text_color));
-		$draw->setTextAlignment(Imagick::ALIGN_CENTER);
-		$draw->setTextAntialias(true);
+	$bg = imagecolorallocate($image, $bg_rgb[0], $bg_rgb[1], $bg_rgb[2]);
+	$text = imagecolorallocate($image, $text_rgb[0], $text_rgb[1], $text_rgb[2]);
 
-		if (file_exists($font)) {
-			$draw->setFont($font);
-		}
-		$draw->setFontSize($font_size);
+	imagealphablending($image, true);
 
-		$metrics = $image->queryFontMetrics($draw, $initials);
+	if ($shape === 'circle') {
+		imagefilledellipse($image, $size / 2, $size / 2, $size, $size, $bg);
+	} elseif ($shape === 'square') {
+		imagefilledrectangle($image, 0, 0, $size, $size, $bg);
+	} elseif ($shape === 'none') {
+		$text = $bg; // Use bg_color for text when no background
+	}
 
-		$x = $size / 2;
-		$y = (($size - $metrics['textHeight']) / 2) + $metrics['ascender'];
+	// Calculate text position
+	if (file_exists($font)) {
+		$bbox = imagettfbbox($font_size, 0, $font, $initials);
+		$text_width = abs($bbox[4] - $bbox[0]);
+		$text_height = abs($bbox[5] - $bbox[1]);
+		$x = ($size - $text_width) / 2;
+		$y = ($size + $text_height) / 2;
+		imagettftext($image, $font_size, 0, $x, $y, $text, $font, $initials);
+	} else {
+		// Fallback to built-in font
+		$font_id = 5;
+		$text_width = imagefontwidth($font_id) * strlen($initials);
+		$text_height = imagefontheight($font_id);
+		$x = ($size - $text_width) / 2;
+		$y = ($size - $text_height) / 2;
+		imagestring($image, $font_id, $x, $y, $initials, $text);
+	}
 
-		$image->annotateImage($draw, $x, $y, 0, $initials);
+	$upload_dir = wp_upload_dir();
+	$filename = 'favicon-' . sanitize_title($site_name) . '.png';
+	$filepath = $upload_dir['path'] . '/' . $filename;
 
-		$upload_dir = wp_upload_dir();
-		$filename = 'favicon-' . sanitize_title($site_name) . '.png';
-		$filepath = $upload_dir['path'] . '/' . $filename;
-
-		$image->writeImage($filepath);
-		$image->clear();
-		$image->destroy();
+	imagepng($image, $filepath);
+	imagedestroy($image);
 
 		$attachment = array(
 			'post_mime_type' => 'image/png',
