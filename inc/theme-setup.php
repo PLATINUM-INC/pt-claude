@@ -75,7 +75,7 @@ function ptb_generate_favicon() {
 
 	$size = 512;
 	$font = ptb_get_random_font();
-	$font_size = strlen($initials) > 1 ? $size * 0.60 : $size * 0.60;
+	$font_size = strlen($initials) > 1 ? $size * 0.60 : $size * 0.55;
 
 	try {
 		$image = new Imagick();
