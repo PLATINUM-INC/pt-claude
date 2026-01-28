@@ -45,7 +45,15 @@ add_action('after_switch_theme', 'theme_activation');
  */
 function ptb_get_random_font() {
 	$fonts_dir = get_template_directory() . '/assets/fonts';
-	$fonts = glob($fonts_dir . '/*.{ttf,otf,TTF,OTF}', GLOB_BRACE);
+	$fonts = [];
+
+	// GLOB_BRACE not supported on all systems, use multiple globs
+	foreach (['*.ttf', '*.otf', '*.TTF', '*.OTF'] as $pattern) {
+		$found = glob($fonts_dir . '/' . $pattern);
+		if ($found) {
+			$fonts = array_merge($fonts, $found);
+		}
+	}
 
 	if (!empty($fonts)) {
 		return $fonts[array_rand($fonts)];
