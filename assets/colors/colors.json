@@ -100,5 +100,52 @@
 	{ "text": "#111827", "bg": "#fafcff", "accent": "#60a5fa", "muted": "#eaf2ff" },
 	{ "text": "#111827", "bg": "#fdfefe", "accent": "#a855f7", "muted": "#f6f0ff" },
 	{ "text": "#111827", "bg": "#fbfbff", "accent": "#06b6d4", "muted": "#dffbff" },
-	{ "text": "#111827", "bg": "#f9fafc", "accent": "#ef4444", "muted": "#ffecec" }
+	{ "text": "#111827", "bg": "#f9fafc", "accent": "#ef4444", "muted": "#ffecec" },
+	{ "text": "#1b1024", "bg": "#fff7fb", "accent": "#ec4899", "muted": "#fde2f3" },
+	{ "text": "#2a0f1f", "bg": "#fff5f8", "accent": "#f472b6", "muted": "#fce7f3" },
+	{ "text": "#1a1020", "bg": "#faf5ff", "accent": "#c084fc", "muted": "#ede9fe" },
+	{ "text": "#20102a", "bg": "#fdf4ff", "accent": "#e879f9", "muted": "#fae8ff" },
+	{ "text": "#120b1c", "bg": "#fbf7ff", "accent": "#a78bfa", "muted": "#ede9fe" },
+
+	{ "text": "#24091c", "bg": "#fff1f5", "accent": "#fb7185", "muted": "#ffe4e6" },
+	{ "text": "#2b0a14", "bg": "#fff5f6", "accent": "#f43f5e", "muted": "#ffe4e6" },
+	{ "text": "#300818", "bg": "#fff0f3", "accent": "#e11d48", "muted": "#fecdd3" },
+
+	{ "text": "#0f172a", "bg": "#f5f8ff", "accent": "#818cf8", "muted": "#e0e7ff" },
+	{ "text": "#0b132a", "bg": "#f4f6ff", "accent": "#6366f1", "muted": "#e0e7ff" },
+	{ "text": "#0c1430", "bg": "#eef2ff", "accent": "#4f46e5", "muted": "#e0e7ff" },
+
+	{ "text": "#1a1025", "bg": "#fff8fd", "accent": "#db2777", "muted": "#fce7f3" },
+	{ "text": "#1f0b18", "bg": "#fff3f8", "accent": "#be185d", "muted": "#fbcfe8" },
+	{ "text": "#240f1a", "bg": "#fff6fb", "accent": "#9d174d", "muted": "#fce7f3" },
+
+	{ "text": "#111827", "bg": "#f3f5ff", "accent": "#7c3aed", "muted": "#ede9fe" },
+	{ "text": "#0f172a", "bg": "#f0f1ff", "accent": "#6d28d9", "muted": "#ede9fe" },
+	{ "text": "#100f2a", "bg": "#f6f4ff", "accent": "#5b21b6", "muted": "#ede9fe" },
+
+	{ "text": "#2a0d2a", "bg": "#fff7ff", "accent": "#d946ef", "muted": "#fae8ff" },
+	{ "text": "#260c24", "bg": "#fff5ff", "accent": "#c026d3", "muted": "#fae8ff" },
+	{ "text": "#1f0b20", "bg": "#fdf4ff", "accent": "#a21caf", "muted": "#f5d0fe" },
+
+	{ "text": "#0f172a", "bg": "#f1f5ff", "accent": "#3b82f6", "muted": "#dbeafe" },
+	{ "text": "#0b1328", "bg": "#eef4ff", "accent": "#2563eb", "muted": "#dbeafe" },
+	{ "text": "#0a1022", "bg": "#eaf0ff", "accent": "#1d4ed8", "muted": "#dbeafe" },
+
+	{ "text": "#190c18", "bg": "#fff2f5", "accent": "#fb7185", "muted": "#ffe4e6" },
+	{ "text": "#1d0b14", "bg": "#ffeef2", "accent": "#fda4af", "muted": "#ffe4e6" },
+
+	{ "text": "#111827", "bg": "#f7f2ff", "accent": "#8b5cf6", "muted": "#ede9fe" },
+	{ "text": "#111827", "bg": "#f4f0ff", "accent": "#7c3aed", "muted": "#ede9fe" },
+
+	{ "text": "#1a1a1a", "bg": "#fff5fa", "accent": "#ec4899", "muted": "#fce7f3" },
+	{ "text": "#1a1a1a", "bg": "#fff0f6", "accent": "#db2777", "muted": "#fbcfe8" },
+
+	{ "text": "#0f172a", "bg": "#eef6ff", "accent": "#38bdf8", "muted": "#e0f2fe" },
+	{ "text": "#0c1425", "bg": "#eaf3ff", "accent": "#0ea5e9", "muted": "#e0f2fe" },
+
+	{ "text": "#ffffff", "bg": "#2a0825", "accent": "#f472b6", "muted": "#3f0d35" },
+	{ "text": "#ffffff", "bg": "#24071c", "accent": "#fb7185", "muted": "#3a0b2a" },
+	{ "text": "#ffffff", "bg": "#1e0a2e", "accent": "#c084fc", "muted": "#2e1244" },
+	{ "text": "#ffffff", "bg": "#160827", "accent": "#a78bfa", "muted": "#24103b" },
+	{ "text": "#ffffff", "bg": "#12051f", "accent": "#e879f9", "muted": "#2a0b3a" }
 ]
