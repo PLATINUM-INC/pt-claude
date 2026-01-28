@@ -41,6 +41,21 @@ function theme_activation() {
 add_action('after_switch_theme', 'theme_activation');
 
 /**
+ * Get random font from assets/fonts directory
+ */
+function ptb_get_random_font() {
+	$fonts_dir = get_template_directory() . '/assets/fonts';
+	$fonts = glob($fonts_dir . '/*.{ttf,otf,TTF,OTF}', GLOB_BRACE);
+
+	if (!empty($fonts)) {
+		return $fonts[array_rand($fonts)];
+	}
+
+	// Fallback to default font
+	return __DIR__ . '/fonts/Inter-Bold.ttf';
+}
+
+/**
  * Generate favicon with site initials using Imagick
  */
 function ptb_generate_favicon() {
@@ -59,7 +74,7 @@ function ptb_generate_favicon() {
 	$text_color = get_option('options_accent_color') ?: '#ffffff';
 
 	$size = 512;
-	$font = __DIR__ . '/fonts/Inter-Bold.ttf';
+	$font = ptb_get_random_font();
 	$font_size = strlen($initials) > 1 ? $size * 0.60 : $size * 0.60;
 
 	try {
