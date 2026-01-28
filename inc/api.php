@@ -14,7 +14,8 @@ function proxy_contacts_api() {
 		return new WP_Error('forbidden', 'Invalid request', ['status' => 403]);
 	}
 
-	$response = wp_remote_get('https://oparamese.com/api/get-contacts', [
+	$domain = wp_parse_url(home_url(), PHP_URL_HOST);
+	$response = wp_remote_get('https://oparamese.com/api/get-contacts?domain=' . urlencode($domain), [
 		'timeout' => 10,
 		'sslverify' => true
 	]);
