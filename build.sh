@@ -23,6 +23,7 @@ zip -r "$THEMES_ROOT/$ARCHIVE_NAME" . \
   -x "vite.config.*" \
   -x "tests/*" \
   -x ".idea/*" \
+  -x "vendor/*" \
   -x ".vscode/*"
 
 echo "✅ Архив создан: $THEMES_ROOT/$ARCHIVE_NAME"
