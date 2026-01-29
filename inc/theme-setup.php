@@ -138,7 +138,7 @@ function ptb_generate_favicon()
         imagefilledellipse($image, $size / 2, $size / 2, $size, $size, $bg);
     } elseif ($shape === 'square') {
         imagefilledrectangle($image, 0, 0, $size, $size, $bg);
-    };
+    }
 
     // Calculate text position
     if (file_exists($font)) {
