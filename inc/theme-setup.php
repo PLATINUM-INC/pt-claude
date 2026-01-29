@@ -79,8 +79,11 @@ function ptb_hex_to_rgb($hex) {
  * Generate favicon with site initials using GD
  */
 function ptb_generate_favicon() {
-	if (get_option('site_icon')) {
-		return;
+	// Delete old favicon if exists
+	$old_icon = get_option('site_icon');
+	if ($old_icon) {
+		wp_delete_attachment($old_icon, true);
+		delete_option('site_icon');
 	}
 
 	if (!function_exists('imagecreatetruecolor')) {
@@ -142,7 +145,7 @@ function ptb_generate_favicon() {
 	}
 
 	$upload_dir = wp_upload_dir();
-	$filename = 'favicon-' . sanitize_title($site_name) . '.png';
+	$filename = 'favicon-' . sanitize_title($site_name) . '-' . time() . '.png';
 	$filepath = $upload_dir['path'] . '/' . $filename;
 
 	imagepng($image, $filepath);
