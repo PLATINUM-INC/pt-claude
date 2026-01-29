@@ -35,23 +35,24 @@ add_action('after_setup_theme', 'theme_setup', 0);
 
 function theme_activation() {
 	update_option('posts_per_page', 60);
-	// Schedule favicon generation for admin_init when WordPress is fully loaded
-	update_option('ptb_generate_favicon_pending', true);
 }
 
 add_action('after_switch_theme', 'theme_activation');
 
 /**
- * Generate favicon on admin_init (safer than after_switch_theme)
+ * Generate favicon on admin_init if not configured
  */
-function ptb_maybe_generate_favicon() {
-	if (get_option('ptb_generate_favicon_pending')) {
-		delete_option('ptb_generate_favicon_pending');
-		ptb_generate_favicon();
-	}
-}
-
 add_action('admin_init', 'ptb_maybe_generate_favicon');
+function ptb_maybe_generate_favicon() {
+	$favicon_configured = get_field('favicon_configured', 'option');
+
+	if ($favicon_configured) {
+		return;
+	}
+
+	ptb_generate_favicon();
+	update_field('favicon_configured', true, 'option');
+}
 
 /**
  * Get random font from assets/fonts directory
@@ -155,7 +156,7 @@ function ptb_generate_favicon() {
 	}
 
 	$upload_dir = wp_upload_dir();
-	$filename = 'favicon-' . sanitize_title($site_name) . '.png';
+	$filename = 'favicon-' . sanitize_title($site_name) . '-' . time() . '.png';
 	$filepath = $upload_dir['path'] . '/' . $filename;
 
 	imagepng($image, $filepath);

@@ -24,6 +24,27 @@
             "ui": 1
         },
         {
+            "key": "field_692ef0b5e6be6",
+            "label": "Favicon configured?",
+            "name": "favicon_configured",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 3,
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_69282fe295374",
             "label": "Text color",
             "name": "text_color",
