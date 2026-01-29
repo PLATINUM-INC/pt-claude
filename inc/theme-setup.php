@@ -93,10 +93,6 @@ function ptb_hex_to_rgb($hex) {
  * Generate favicon with site initials using GD
  */
 function ptb_generate_favicon() {
-	if (get_option('site_icon')) {
-		return;
-	}
-
 	if (!function_exists('imagecreatetruecolor')) {
 		return;
 	}
