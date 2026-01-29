@@ -6,9 +6,11 @@
 			<?php the_title() ?>
 		</h1>
 		<?php
-			get_template_part('template-parts/components/models-grid');
-		?>
-		<?php if (!is_paged()) the_content(); ?>
+            get_template_part('template-parts/components/models-grid');
+?>
+		<?php if (! is_paged()) {
+		    the_content();
+		} ?>
 	</div>
 </main>
 

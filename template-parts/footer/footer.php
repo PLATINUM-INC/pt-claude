@@ -3,29 +3,29 @@ $whatsapp = get_field('whatsapp', 'option');
 $telegram = get_field('telegram', 'option');
 
 $parents = get_pages([
-	'post_type'        => 'page',
-	'parent'           => 0,
-	'sort_column'      => 'menu_order',
-	'suppress_filters' => false,
+    'post_type' => 'page',
+    'parent' => 0,
+    'sort_column' => 'menu_order',
+    'suppress_filters' => false,
 ]);
 
 $children_links = [];
 foreach ($parents as $p) {
-	$children = get_pages([
-		'post_type'        => 'page',
-		'parent'           => $p->ID,
-		'sort_column'      => 'menu_order',
-		'suppress_filters' => false,
-	]);
-	$children_links = array_merge($children_links, $children);
+    $children = get_pages([
+        'post_type' => 'page',
+        'parent' => $p->ID,
+        'sort_column' => 'menu_order',
+        'suppress_filters' => false,
+    ]);
+    $children_links = array_merge($children_links, $children);
 }
 $children_links = array_slice($children_links, 0, 10);
 
 $taxonomies = [
-	'area'      => __('Районы', 'pt-claude'),
-	'metro'     => __('Метро', 'pt-claude'),
-	'services'  => __('Услуги', 'pt-claude'),
-	'options'   => __('Параметры', 'pt-claude'),
+    'area' => __('Районы', 'pt-claude'),
+    'metro' => __('Метро', 'pt-claude'),
+    'services' => __('Услуги', 'pt-claude'),
+    'options' => __('Параметры', 'pt-claude'),
 ];
 
 ?>
@@ -36,42 +36,42 @@ $taxonomies = [
 			<div class="footer_col">
 				<h3><?php esc_html_e('Меню', 'pt-claude'); ?></h3>
 				<ul>
-					<?php foreach ($parents as $page): ?>
+					<?php foreach ($parents as $page) { ?>
 						<li>
 							<a href="<?php echo esc_url(get_permalink($page->ID)); ?>">
 								<?php echo esc_html($page->post_title); ?>
 							</a>
 						</li>
-					<?php endforeach; ?>
+					<?php } ?>
 				</ul>
 			</div>
 
 			<div class="footer_col">
 				<h3><?php esc_html_e('Категории', 'pt-claude'); ?></h3>
 
-				<?php foreach ($taxonomies as $tax => $label): ?>
+				<?php foreach ($taxonomies as $tax => $label) { ?>
 					<?php
-					$terms = get_terms([
-						'taxonomy'   => $tax,
-						'hide_empty' => false,
-						'number'     => 6,
-					]);
+                    $terms = get_terms([
+                        'taxonomy' => $tax,
+                        'hide_empty' => false,
+                        'number' => 6,
+                    ]);
 
-					if (!empty($terms) && !is_wp_error($terms)): ?>
+				    if (! empty($terms) && ! is_wp_error($terms)) { ?>
 						<div class="footer_tax_block">
 							<h4><?php echo esc_html($label); ?></h4>
 							<ul>
-								<?php foreach ($terms as $term): ?>
+								<?php foreach ($terms as $term) { ?>
 									<li>
 										<a href="<?php echo esc_url(get_term_link($term)); ?>">
 											<?php echo esc_html($term->name); ?>
 										</a>
 									</li>
-								<?php endforeach; ?>
+								<?php } ?>
 							</ul>
 						</div>
-					<?php endif; ?>
-				<?php endforeach; ?>
+					<?php } ?>
+				<?php } ?>
 
 			</div>
 
