@@ -8,7 +8,7 @@
 			<?php
 			get_template_part('template-parts/components/models-grid');
 			?>
-			<?php the_content(); ?>
+			<?php if (!is_paged()) the_content(); ?>
 		</div>
 	</main>
 

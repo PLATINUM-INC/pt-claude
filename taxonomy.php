@@ -16,7 +16,7 @@ $desc = term_description();
 		get_template_part('template-parts/components/models-grid');
 		?>
 
-		<?php if ($desc) : ?>
+		<?php if ($desc && !is_paged()) : ?>
 			<div class="term_description">
 				<?php echo wp_kses_post($desc); ?>
 			</div>

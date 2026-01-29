@@ -4,7 +4,7 @@
 
 	$args = [
 		'post_type'      => 'models',
-		'posts_per_page' => 20,
+		'posts_per_page' => get_option('posts_per_page', 20),
 		'paged'          => $paged,
 	];
 
