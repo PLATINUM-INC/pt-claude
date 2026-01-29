@@ -35,10 +35,24 @@ add_action('after_setup_theme', 'theme_setup', 0);
 
 function theme_activation() {
 	update_option('posts_per_page', 60);
-	ptb_generate_favicon();
 }
 
 add_action('after_switch_theme', 'theme_activation');
+
+/**
+ * Generate favicon on admin_init if not configured
+ */
+add_action('admin_init', 'ptb_maybe_generate_favicon');
+function ptb_maybe_generate_favicon() {
+	$favicon_configured = get_field('favicon_configured', 'option');
+
+	if ($favicon_configured) {
+		return;
+	}
+
+	ptb_generate_favicon();
+	update_field('favicon_configured', true, 'option');
+}
 
 /**
  * Get random font from assets/fonts directory
@@ -79,11 +93,8 @@ function ptb_hex_to_rgb($hex) {
  * Generate favicon with site initials using GD
  */
 function ptb_generate_favicon() {
-	// Delete old favicon if exists
-	$old_icon = get_option('site_icon');
-	if ($old_icon) {
-		wp_delete_attachment($old_icon, true);
-		delete_option('site_icon');
+	if (get_option('site_icon')) {
+		return;
 	}
 
 	if (!function_exists('imagecreatetruecolor')) {
