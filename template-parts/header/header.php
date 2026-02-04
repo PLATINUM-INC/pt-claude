@@ -181,6 +181,34 @@ function menu_limit_words($text, $limit = 3) {
 
 				<?php endforeach; ?>
 
+				<!-- Блог -->
+				<?php
+				$blog_posts = get_posts([
+					'post_type'      => 'post',
+					'posts_per_page' => 10,
+					'post_status'    => 'publish',
+				]);
+
+				if (!empty($blog_posts)): ?>
+					<li class="menu-item dropdown">
+						<button class="dropdown-toggle dropdown-toggle--js" type="button">
+							<span><?php esc_html_e('Блог', 'pt-claude'); ?></span>
+						</button>
+
+						<div class="dropdown-menu">
+							<ul>
+								<?php foreach ($blog_posts as $bp): ?>
+									<li>
+										<a href="<?php echo esc_url(get_permalink($bp->ID)); ?>">
+											<?php echo esc_html($bp->post_title); ?>
+										</a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+					</li>
+				<?php endif; ?>
+
 			</ul>
 
 			<?php if ( function_exists( 'icl_get_languages' ) ): ?>
@@ -292,6 +320,25 @@ function menu_limit_words($text, $limit = 3) {
 				</li>
 
 			<?php endforeach; ?>
+
+			<!-- Блог -->
+			<?php if (!empty($blog_posts)): ?>
+				<li class="m-item">
+					<button class="m-toggle" type="button">
+						<?php esc_html_e('Блог', 'pt-claude'); ?>
+					</button>
+
+					<ul class="m-sub">
+						<?php foreach ($blog_posts as $bp): ?>
+							<li>
+								<a href="<?php echo esc_url(get_permalink($bp->ID)); ?>">
+									<?php echo esc_html($bp->post_title); ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</li>
+			<?php endif; ?>
 
 		</ul>
 	</div>

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PT Bunny\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-23 16:15+0000\n"
-"PO-Revision-Date: 2026-01-26 16:38+0000\n"
+"PO-Revision-Date: 2026-02-04 19:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -15,6 +15,14 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.8.1; wp-6.9; php-8.3.29\n"
 "X-Domain: pt-bunny"
+
+#: archive.php:72
+msgid "%d мин"
+msgstr "%d хв"
+
+#: single.php:27
+msgid "%d мин чтения"
+msgstr "%d хв читання"
 
 #: template-parts/components/model-card.php:47
 #, php-format
@@ -31,11 +39,15 @@ msgstr "%s років"
 msgid "%s см"
 msgstr "%s см"
 
-#: single-models.php:60 template-parts/components/model-card.php:78
+#: archive.php:104
+msgid "&laquo; Назад"
+msgstr "&laquo; Назад"
+
+#: single-models.php:84 template-parts/components/model-card.php:66
 msgid "1 час"
 msgstr "1 година"
 
-#: single-models.php:67 template-parts/components/model-card.php:85
+#: single-models.php:91 template-parts/components/model-card.php:73
 msgid "2 часа"
 msgstr "2 години"
 
@@ -47,23 +59,27 @@ msgstr "На головну"
 msgid "Back to Shop"
 msgstr "До магазину"
 
-#: inc/theme-setup.php:28
+#. Description of the theme
+msgid "Elegant and modern theme"
+msgstr "Елегантна та сучасна тема"
+
+#: inc/theme-setup.php:27
 msgid "Footer Col 1"
 msgstr "Футер колонка 1"
 
-#: inc/theme-setup.php:29
+#: inc/theme-setup.php:28
 msgid "Footer Col 2"
 msgstr "Футер колонка 2"
 
-#: inc/theme-setup.php:30
+#: inc/theme-setup.php:29
 msgid "Footer Col 3"
 msgstr "Футер колонка 3"
 
-#: inc/theme-setup.php:27
+#: inc/theme-setup.php:26
 msgid "Footer Menu"
 msgstr "Меню футера"
 
-#: inc/theme-setup.php:26
+#: inc/theme-setup.php:25
 msgid "Header Menu"
 msgstr "Меню хедера"
 
@@ -72,14 +88,15 @@ msgid "Oops!"
 msgstr "Ооой!"
 
 #. Author of the theme
-msgid "Petr"
-msgstr "Petr"
+#| msgid "Petr"
+msgid "PetrWP"
+msgstr "PetrWP"
 
 #. Name of the theme
-msgid "PT Bunny"
-msgstr "PT Bunny"
+msgid "PT Claude"
+msgstr "PT Claude"
 
-#: single-models.php:89 template-parts/components/model-card.php:62
+#: single-models.php:113 template-parts/components/model-card.php:182
 #: template-parts/footer/footer.php:105
 msgid "Telegram"
 msgstr "Telegram"
@@ -88,32 +105,40 @@ msgstr "Telegram"
 msgid "The Page you are looking for doesn't exist"
 msgstr "Сторінка, яку ви шукаєте, не існує"
 
-#. Description of the theme
-msgid "Turn your website into a flirty love letter with PT Bunny"
-msgstr "Перетворіть свій сайт на кокетливий любовний лист з PT Bunny"
-
-#: single-models.php:94 template-parts/components/model-card.php:67
+#: single-models.php:118 template-parts/components/model-card.php:187
 #: template-parts/footer/footer.php:110
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: single-models.php:47
+#: archive.php:30
+msgid "Архив"
+msgstr "Архів"
+
+#: template-parts/header/header.php:195 template-parts/header/header.php:328
+msgid "Блог"
+msgstr "Блог"
+
+#: single-models.php:71
 msgid "Вес:"
 msgstr "Вага:"
 
-#: single-models.php:43
+#: single-models.php:67
 msgid "Возраст:"
 msgstr "Вік:"
 
-#: single-models.php:51
+#: single-models.php:75
 msgid "Волосы:"
 msgstr "Волосся:"
+
+#: archive.php:105
+msgid "Вперёд &raquo;"
+msgstr "Вперед &raquo;"
 
 #: template-parts/footer/footer.php:117
 msgid "Все права защищены"
 msgstr "Усі права захищені"
 
-#: template-parts/header/header.php:79 template-parts/header/header.php:200
+#: template-parts/header/header.php:91 template-parts/header/header.php:235
 msgid "Главная"
 msgstr "Головна"
 
@@ -122,11 +147,15 @@ msgstr "Головна"
 msgid "Грудь %s"
 msgstr "Груди %s"
 
-#: single-models.php:49
+#: single-models.php:73
 msgid "Грудь:"
 msgstr "Груди:"
 
-#: template-parts/footer/footer.php:72
+#: archive.php:111
+msgid "Записей не найдено."
+msgstr "Записів не знайдено."
+
+#: template-parts/footer/footer.php:50
 msgid "Категории"
 msgstr "Категорії"
 
@@ -134,79 +163,103 @@ msgstr "Категорії"
 msgid "Контакты"
 msgstr "Контакти"
 
-#: template-parts/footer/footer.php:42
+#: template-parts/footer/footer.php:37
 msgid "Меню"
 msgstr "Меню"
 
-#: single-models.php:104 inc/custom-taxonomies.php:20
-#: inc/custom-taxonomies.php:21 template-parts/footer/footer.php:24
+#: single-models.php:128 inc/custom-taxonomies.php:20
+#: inc/custom-taxonomies.php:21 template-parts/footer/footer.php:26
 msgid "Метро"
 msgstr "Метро"
 
-#: template-parts/footer/footer.php:55
-msgid "Модели"
-msgstr "Моделі"
+#: template-parts/footer/footer.php:79
+msgid "Новости"
+msgstr "Новини"
 
-#: single-models.php:74 template-parts/components/model-card.php:92
+#: single-models.php:98 template-parts/components/model-card.php:80
 msgid "Ночь"
 msgstr "Ніч"
 
-#: single-models.php:87 template-parts/components/model-card.php:60
+#: single-models.php:111 template-parts/components/model-card.php:180
 #: template-parts/footer/footer.php:103
 msgid "Открыть Telegram"
 msgstr "Відкрити Telegram"
 
-#: single-models.php:92 template-parts/components/model-card.php:65
+#: single-models.php:116 template-parts/components/model-card.php:185
 #: template-parts/footer/footer.php:108
 msgid "Открыть WhatsApp"
 msgstr "Відкрити WhatsApp"
+
+#: template-parts/header/header.php:74
+msgid "Открыть меню"
+msgstr "Відкрити меню"
 
 #: inc/custom-taxonomies.php:29
 msgid "Параметр"
 msgstr "Параметр"
 
-#: inc/custom-taxonomies.php:28 template-parts/footer/footer.php:26
+#: inc/custom-taxonomies.php:28 template-parts/footer/footer.php:28
 msgid "Параметры"
 msgstr "Параметри"
 
-#: single-models.php:106
+#: single-models.php:130
 msgid "Параметры модели"
 msgstr "Параметри моделі"
 
-#: single-models.php:137
+#: single-models.php:161
 msgid "Похожие модели"
 msgstr "Схожі моделі"
+
+#: single.php:73
+msgid "Похожие статьи"
+msgstr "Схожі статті"
+
+#: single-models.php:43
+msgid "Предыдущее фото"
+msgstr "Попереднє фото"
 
 #: inc/theme-enqueue.php:64
 #, php-format
 msgid "Привет! Я с сайта %s, хочу подобрать девушку."
 msgstr "Привіт! Я з сайту %s, хочу підібрати дівчину."
 
-#: template-parts/header/header.php:119 template-parts/header/header.php:241
+#: template-parts/header/header.php:132 template-parts/header/header.php:277
 msgid "Разное"
 msgstr "Різне"
 
-#: single-models.php:103 inc/custom-taxonomies.php:17
+#: single-models.php:127 inc/custom-taxonomies.php:17
 msgid "Район"
 msgstr "Район"
 
-#: inc/custom-taxonomies.php:16 template-parts/footer/footer.php:23
+#: inc/custom-taxonomies.php:16 template-parts/footer/footer.php:25
 msgid "Районы"
 msgstr "Райони"
 
-#: single-models.php:45
+#: single-models.php:69
 msgid "Рост:"
 msgstr "Зріст:"
+
+#: single-models.php:44
+msgid "Следующее фото"
+msgstr "Наступне фото"
+
+#: single.php:57
+msgid "Теги:"
+msgstr "Теги:"
 
 #: inc/custom-taxonomies.php:25
 msgid "Услуга"
 msgstr "Послуга"
 
-#: single-models.php:105 inc/custom-taxonomies.php:24
-#: template-parts/footer/footer.php:25
+#: single-models.php:129 inc/custom-taxonomies.php:24
+#: template-parts/footer/footer.php:27
 msgid "Услуги"
 msgstr "Послуги"
 
-#: template-parts/header/header.php:68 template-parts/header/header.php:185
+#: template-parts/header/header.php:226
 msgid "Фильтры"
 msgstr "Фільтри"
+
+#: archive.php:94
+msgid "Читать далее"
+msgstr "Читати далі"

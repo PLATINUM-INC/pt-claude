@@ -1,0 +1,193 @@
+// Single Post Page Styles
+
+.single_post_page {
+	.post_article {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.post_header {
+		margin-bottom: 32px;
+		text-align: center;
+	}
+
+	.post_title {
+		font-size: 36px;
+		font-weight: 700;
+		line-height: 1.3;
+		margin-bottom: 16px;
+		color: $text-color;
+
+		@media (max-width: $point_4) {
+			font-size: 28px;
+		}
+	}
+
+	.post_meta {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+		flex-wrap: wrap;
+		font-size: 14px;
+		color: color-mix(in srgb, $text-color, transparent 40%);
+	}
+
+	.post_date,
+	.post_reading_time {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+
+		&::before {
+			content: '';
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background: $accent-color;
+		}
+	}
+
+	.post_categories {
+		a {
+			color: $accent-color;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.post_thumbnail {
+		margin-bottom: 32px;
+		border-radius: $gl_radius_lg;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+
+	.post_content {
+		margin-bottom: 40px;
+	}
+
+	.post_footer {
+		padding-top: 24px;
+		border-top: 1px solid $muted_color;
+	}
+
+	.post_tags {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.post_tags_label {
+		font-weight: 600;
+		color: $text-color;
+	}
+
+	.post_tag {
+		display: inline-block;
+		padding: 6px 14px;
+		border-radius: 20px;
+		font-size: 14px;
+
+		background: $muted_color;
+		color: $text-color;
+		text-decoration: none;
+		transition: $gl_transition;
+
+		&:hover {
+			background: $accent-color;
+			color: #fff;
+		}
+	}
+}
+
+// Related Posts
+
+.related_posts {
+	max-width: 800px;
+	margin: 60px auto 0;
+	padding-top: 40px;
+	border-top: 1px solid $muted_color;
+
+	h2 {
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 24px;
+		color: $text-color;
+	}
+}
+
+.related_posts_grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+
+	@media (max-width: $point_4) {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+}
+
+.related_post_card {
+	background: $bg-color;
+	border-radius: $gl_radius;
+	overflow: hidden;
+	box-shadow: $gl_shadow;
+	transition: $gl_transition;
+
+	&:hover {
+		box-shadow: $gl_shadow_hover;
+		transform: translateY(-4px);
+	}
+
+	.related_post_image {
+		display: block;
+		aspect-ratio: 16/10;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease;
+		}
+
+		&:hover img {
+			transform: scale(1.05);
+		}
+	}
+
+	.related_post_content {
+		padding: 16px;
+	}
+
+	.related_post_title {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.4;
+		margin-bottom: 8px;
+
+		a {
+			color: $text-color;
+			text-decoration: none;
+
+			&:hover {
+				color: $accent-color;
+			}
+		}
+	}
+
+	.related_post_date {
+		font-size: 13px;
+		color: color-mix(in srgb, $text-color, transparent 40%);
+	}
+}

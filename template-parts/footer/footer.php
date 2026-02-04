@@ -75,6 +75,28 @@ $taxonomies = [
 
 			</div>
 
+			<div class="footer_col">
+				<h3><?php esc_html_e('Новости', 'pt-claude'); ?></h3>
+				<?php
+				$footer_posts = get_posts([
+					'post_type'      => 'post',
+					'posts_per_page' => 5,
+					'post_status'    => 'publish',
+				]);
+
+				if (!empty($footer_posts)): ?>
+					<ul class="footer_posts">
+						<?php foreach ($footer_posts as $fp): ?>
+							<li>
+								<a href="<?php echo esc_url(get_permalink($fp->ID)); ?>">
+									<?php echo esc_html($fp->post_title); ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				<?php endif; ?>
+			</div>
+
 			<div class="footer_col footer_contacts">
 				<h3><?php esc_html_e('Контакты', 'pt-claude'); ?></h3>
 				<div class="model_contacts">

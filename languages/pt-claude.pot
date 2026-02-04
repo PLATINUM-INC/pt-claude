@@ -1,264 +1,264 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PT Bunny\n"
+"Project-Id-Version: PT Claude\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-23 16:15+0000\n"
-"PO-Revision-Date: 2026-02-04 19:38+0000\n"
-"Last-Translator: \n"
-"Language-Team: English (United States)\n"
-"Language: en_US\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"POT-Creation-Date: 2026-02-04 17:24+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.8.1; wp-6.9.1; php-8.3.30\n"
-"X-Domain: pt-bunny"
+"X-Domain: pt-claude"
 
 #: archive.php:72
 msgid "%d мин"
-msgstr "%d min"
+msgstr ""
 
 #: single.php:27
 msgid "%d мин чтения"
-msgstr "%d min read"
+msgstr ""
 
 #: template-parts/components/model-card.php:47
 #, php-format
 msgid "%s кг"
-msgstr "%s kg"
+msgstr ""
 
 #: template-parts/components/model-card.php:39
 #, php-format
 msgid "%s лет"
-msgstr "%s years"
+msgstr ""
 
 #: template-parts/components/model-card.php:43
 #, php-format
 msgid "%s см"
-msgstr "%s cm"
+msgstr ""
 
 #: archive.php:104
 msgid "&laquo; Назад"
-msgstr "&laquo; Back"
+msgstr ""
 
 #: single-models.php:84 template-parts/components/model-card.php:66
 msgid "1 час"
-msgstr "1 hour"
+msgstr ""
 
 #: single-models.php:91 template-parts/components/model-card.php:73
 msgid "2 часа"
-msgstr "2 hours"
+msgstr ""
 
 #: 404.php:5
 msgid "Back To Homepage"
-msgstr "Back To Homepage"
+msgstr ""
 
 #: 404.php:6
 msgid "Back to Shop"
-msgstr "Back to Shop"
+msgstr ""
 
 #. Description of the theme
 msgid "Elegant and modern theme"
-msgstr "Elegant and modern theme"
+msgstr ""
 
 #: inc/theme-setup.php:27
 msgid "Footer Col 1"
-msgstr "Footer Col 1"
+msgstr ""
 
 #: inc/theme-setup.php:28
 msgid "Footer Col 2"
-msgstr "Footer Col 2"
+msgstr ""
 
 #: inc/theme-setup.php:29
 msgid "Footer Col 3"
-msgstr "Footer Col 3"
+msgstr ""
 
 #: inc/theme-setup.php:26
 msgid "Footer Menu"
-msgstr "Footer Menu"
+msgstr ""
 
 #: inc/theme-setup.php:25
 msgid "Header Menu"
-msgstr "Header Menu"
+msgstr ""
 
 #: 404.php:3
 msgid "Oops!"
-msgstr "Ooops!"
+msgstr ""
 
 #. Author of the theme
-#| msgid "Petr"
 msgid "PetrWP"
-msgstr "PetrWP"
+msgstr ""
 
 #. Name of the theme
 msgid "PT Claude"
-msgstr "PT Claude"
+msgstr ""
 
 #: single-models.php:113 template-parts/components/model-card.php:182
 #: template-parts/footer/footer.php:105
 msgid "Telegram"
-msgstr "Telegram"
+msgstr ""
 
 #: 404.php:4
 msgid "The Page you are looking for doesn't exist"
-msgstr "The Page you are looking for doesn't exist"
+msgstr ""
 
 #: single-models.php:118 template-parts/components/model-card.php:187
 #: template-parts/footer/footer.php:110
 msgid "WhatsApp"
-msgstr "WhatsApp"
+msgstr ""
 
 #: archive.php:30
 msgid "Архив"
-msgstr "Archive"
+msgstr ""
 
 #: template-parts/header/header.php:195 template-parts/header/header.php:328
 msgid "Блог"
-msgstr "Blog"
+msgstr ""
 
 #: single-models.php:71
 msgid "Вес:"
-msgstr "Weight:"
+msgstr ""
 
 #: single-models.php:67
 msgid "Возраст:"
-msgstr "Age:"
+msgstr ""
 
 #: single-models.php:75
 msgid "Волосы:"
-msgstr "Hair:"
+msgstr ""
 
 #: archive.php:105
 msgid "Вперёд &raquo;"
-msgstr "Next &raquo;"
+msgstr ""
 
 #: template-parts/footer/footer.php:117
 msgid "Все права защищены"
-msgstr "All rights reserved"
+msgstr ""
 
 #: template-parts/header/header.php:91 template-parts/header/header.php:235
 msgid "Главная"
-msgstr "Home"
+msgstr ""
 
 #: template-parts/components/model-card.php:51
 #, php-format
 msgid "Грудь %s"
-msgstr "Bust %s"
+msgstr ""
 
 #: single-models.php:73
 msgid "Грудь:"
-msgstr "Bust:"
+msgstr ""
 
 #: archive.php:111
 msgid "Записей не найдено."
-msgstr "No posts found."
+msgstr ""
 
 #: template-parts/footer/footer.php:50
 msgid "Категории"
-msgstr "Categories"
+msgstr ""
 
 #: template-parts/footer/footer.php:101
 msgid "Контакты"
-msgstr "Contacts"
+msgstr ""
 
 #: template-parts/footer/footer.php:37
 msgid "Меню"
-msgstr "Menu"
+msgstr ""
 
 #: single-models.php:128 inc/custom-taxonomies.php:20
 #: inc/custom-taxonomies.php:21 template-parts/footer/footer.php:26
 msgid "Метро"
-msgstr "Metro"
+msgstr ""
 
 #: template-parts/footer/footer.php:79
 msgid "Новости"
-msgstr "News"
+msgstr ""
 
 #: single-models.php:98 template-parts/components/model-card.php:80
 msgid "Ночь"
-msgstr "Night"
+msgstr ""
 
 #: single-models.php:111 template-parts/components/model-card.php:180
 #: template-parts/footer/footer.php:103
 msgid "Открыть Telegram"
-msgstr "Open Telegram"
+msgstr ""
 
 #: single-models.php:116 template-parts/components/model-card.php:185
 #: template-parts/footer/footer.php:108
 msgid "Открыть WhatsApp"
-msgstr "Open WhatsApp"
+msgstr ""
 
 #: template-parts/header/header.php:74
 msgid "Открыть меню"
-msgstr "Open menu"
+msgstr ""
 
 #: inc/custom-taxonomies.php:29
 msgid "Параметр"
-msgstr "Model Details"
+msgstr ""
 
 #: inc/custom-taxonomies.php:28 template-parts/footer/footer.php:28
 msgid "Параметры"
-msgstr "Details"
+msgstr ""
 
 #: single-models.php:130
 msgid "Параметры модели"
-msgstr "Model Details"
+msgstr ""
 
 #: single-models.php:161
 msgid "Похожие модели"
-msgstr "Similar models"
+msgstr ""
 
 #: single.php:73
 msgid "Похожие статьи"
-msgstr "Related articles"
+msgstr ""
 
 #: single-models.php:43
 msgid "Предыдущее фото"
-msgstr "Previous photo"
+msgstr ""
 
 #: inc/theme-enqueue.php:64
 #, php-format
 msgid "Привет! Я с сайта %s, хочу подобрать девушку."
-msgstr "Hi! I'm from %s, I'd like to choose a girl."
+msgstr ""
 
 #: template-parts/header/header.php:132 template-parts/header/header.php:277
 msgid "Разное"
-msgstr "Other"
+msgstr ""
 
 #: single-models.php:127 inc/custom-taxonomies.php:17
 msgid "Район"
-msgstr "District"
+msgstr ""
 
 #: inc/custom-taxonomies.php:16 template-parts/footer/footer.php:25
 msgid "Районы"
-msgstr "Districts"
+msgstr ""
 
 #: single-models.php:69
 msgid "Рост:"
-msgstr "Height:"
+msgstr ""
 
 #: single-models.php:44
 msgid "Следующее фото"
-msgstr "Next photo"
+msgstr ""
 
 #: single.php:57
 msgid "Теги:"
-msgstr "Tags:"
+msgstr ""
 
 #: inc/custom-taxonomies.php:25
 msgid "Услуга"
-msgstr "Service"
+msgstr ""
 
 #: single-models.php:129 inc/custom-taxonomies.php:24
 #: template-parts/footer/footer.php:27
 msgid "Услуги"
-msgstr "Services"
+msgstr ""
 
 #: template-parts/header/header.php:226
 msgid "Фильтры"
-msgstr "Filters"
+msgstr ""
 
 #: archive.php:94
 msgid "Читать далее"
-msgstr "Read more"
+msgstr ""
