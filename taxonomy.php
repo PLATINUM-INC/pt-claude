@@ -13,14 +13,14 @@ $desc = term_description();
 		</h1>
 
 		<?php
-		get_template_part('template-parts/components/models-grid');
-		?>
+        get_template_part('template-parts/components/models-grid');
+?>
 
-		<?php if ($desc && !is_paged()) : ?>
+		<?php if ($desc && ! is_paged()) { ?>
 			<div class="term_description">
 				<?php echo wp_kses_post($desc); ?>
 			</div>
-		<?php endif; ?>
+		<?php } ?>
 	</div>
 </main>
 

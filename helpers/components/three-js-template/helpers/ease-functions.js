@@ -73,7 +73,8 @@ const material = {
 };
 
 // --------------------------------------------- USAGE
-init() {
+init()
+{
 	const startAnim = () => {
 		this.material.uniforms.uAnimActive.value = 1;
 		this.material.uniforms.uStartAt.value = this.time;
@@ -88,7 +89,8 @@ init() {
 	startAnim();
 }
 
-render() {
+render()
+{
 	this.time += 0.01;
 	this.material.uniforms.time.value = this.time;
 }

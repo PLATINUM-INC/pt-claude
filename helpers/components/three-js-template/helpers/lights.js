@@ -1,6 +1,7 @@
 /** Lights Chunk - sample lights */
 
-addLights() {
+addLights()
+{
 	const l1 = new T.AmbientLight(0xfffffff, 0.2);
 	const l2 = new T.HemisphereLight(0xfffffff, 1);
 

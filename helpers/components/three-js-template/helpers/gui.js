@@ -2,7 +2,8 @@
 
 import dat from 'dat.gui';
 
-addGui() {
+addGui()
+{
 	let that = this;
 	this.guiSettings = {
 		xRotation: 0,

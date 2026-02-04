@@ -33,3 +33,5 @@ bun.lockb
 node_modules/
 test.mjs
 _html_entries/
+
+/vendor/

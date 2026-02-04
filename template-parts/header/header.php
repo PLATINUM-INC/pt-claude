@@ -6,26 +6,31 @@ $email = get_field('email', 'option');
 $phone = get_field('phone', 'option');
 $extra_taxonomies = ['area', 'metro', 'services', 'options'];
 
-function menu_limit_words($text, $limit = 3) {
-	$text = trim(wp_strip_all_tags((string) $text));
-	if ($text === '') return '';
+function menu_limit_words($text, $limit = 3)
+{
+    $text = trim(wp_strip_all_tags((string) $text));
+    if ($text === '') {
+        return '';
+    }
 
-	$words = preg_split('/\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY);
-	if (!$words) return '';
+    $words = preg_split('/\s+/u', $text, -1, PREG_SPLIT_NO_EMPTY);
+    if (! $words) {
+        return '';
+    }
 
-	$words = array_slice($words, 0, $limit);
+    $words = array_slice($words, 0, $limit);
 
-	// if last word consists of 1-2 letters — hide it
-	while (count($words) > 1) {
-		$last = end($words);
-		if (mb_strlen($last) <= 2) {
-			array_pop($words);
-		} else {
-			break;
-		}
-	}
+    // if last word consists of 1-2 letters — hide it
+    while (count($words) > 1) {
+        $last = end($words);
+        if (mb_strlen($last) <= 2) {
+            array_pop($words);
+        } else {
+            break;
+        }
+    }
 
-	return implode(' ', $words);
+    return implode(' ', $words);
 }
 
 ?>
@@ -33,53 +38,56 @@ function menu_limit_words($text, $limit = 3) {
 <header class="header js-header" id="header">
 
 	<?php
-	$front_id = (int) get_option('page_on_front');
+    $front_id = (int) get_option('page_on_front');
 
-	// WPML: get translated front page ID
-	if ( function_exists( 'wpml_object_id_filter' ) ) {
-		$front_id = (int) wpml_object_id_filter( $front_id, 'page', true );
-	}
+// WPML: get translated front page ID
+if (function_exists('wpml_object_id_filter')) {
+    $front_id = (int) wpml_object_id_filter($front_id, 'page', true);
+}
 
-	$top_pages = get_pages([
-		'post_type'        => 'page',
-		'parent'           => 0,
-		'sort_column'      => 'menu_order',
-		'sort_order'       => 'ASC',
-		'suppress_filters' => false,
-	]);
+$top_pages = get_pages([
+    'post_type' => 'page',
+    'parent' => 0,
+    'sort_column' => 'menu_order',
+    'sort_order' => 'ASC',
+    'suppress_filters' => false,
+]);
 
-	// Убираем главную (если задана как статическая), чтобы не дублировать
-	if ($front_id) {
-		$top_pages = array_filter($top_pages, function($p) use ($front_id) {
-			return (int) $p->ID !== $front_id;
-		});
-	}
+// Убираем главную (если задана как статическая), чтобы не дублировать
+if ($front_id) {
+    $top_pages = array_filter($top_pages, function ($p) use ($front_id) {
+        return (int) $p->ID !== $front_id;
+    });
+}
 
-	$single_pages = [];          // без детей -> в dropdown "Разное"
-	$parents_with_children = []; // с детьми -> отдельные dropdown
+$single_pages = [];          // без детей -> в dropdown "Разное"
+$parents_with_children = []; // с детьми -> отдельные dropdown
 
-	foreach ($top_pages as $p) {
-		$has_child = get_pages([
-			'post_type'        => 'page',
-			'parent'           => $p->ID,
-			'number'           => 1,
-			'suppress_filters' => false,
-		]);
+foreach ($top_pages as $p) {
+    $has_child = get_pages([
+        'post_type' => 'page',
+        'parent' => $p->ID,
+        'number' => 1,
+        'suppress_filters' => false,
+    ]);
 
-		if (!empty($has_child)) $parents_with_children[] = $p;
-		else $single_pages[] = $p;
-	}
-	?>
+    if (! empty($has_child)) {
+        $parents_with_children[] = $p;
+    } else {
+        $single_pages[] = $p;
+    }
+}
+?>
 
 	<button class="mobile-burger-btn js-filters-open" type="button" aria-label="<?php echo esc_attr__('Открыть меню', 'pt-claude'); ?>">
 		<span class="burger-lines" aria-hidden="true"></span>
 	</button>
 
-	<?php if ( function_exists( 'icl_get_languages' ) ): ?>
+	<?php if (function_exists('icl_get_languages')) { ?>
 		<div class="language-switcher language-switcher--mobile">
-			<?php do_action( 'wpml_add_language_selector' ); ?>
+			<?php do_action('wpml_add_language_selector'); ?>
 		</div>
-	<?php endif; ?>
+	<?php } ?>
 
 	<nav id="filters" class="filters-nav desktop-only">
 		<div class="container">
@@ -93,18 +101,18 @@ function menu_limit_words($text, $limit = 3) {
 				</li>
 
 				<!-- Родители с детьми -->
-				<?php foreach (array_slice($parents_with_children, 0, 4) as $parent): ?>
+				<?php foreach (array_slice($parents_with_children, 0, 4) as $parent) { ?>
 					<?php
-					$children = get_pages([
-						'post_type'        => 'page',
-						'parent'           => $parent->ID,
-						'sort_column'      => 'menu_order',
-						'sort_order'       => 'ASC',
-						'suppress_filters' => false,
-					]);
+                $children = get_pages([
+                    'post_type' => 'page',
+                    'parent' => $parent->ID,
+                    'sort_column' => 'menu_order',
+                    'sort_order' => 'ASC',
+                    'suppress_filters' => false,
+                ]);
 
-					$title = get_field('menu_label', $parent->ID) ?: $parent->post_title;
-					?>
+				    $title = get_field('menu_label', $parent->ID) ?: $parent->post_title;
+				    ?>
 
 					<li class="menu-item dropdown">
 						<button class="dropdown-toggle dropdown-toggle--js" type="button">
@@ -113,20 +121,20 @@ function menu_limit_words($text, $limit = 3) {
 
 						<div class="dropdown-menu">
 							<ul>
-								<?php foreach ($children as $child): ?>
+								<?php foreach ($children as $child) { ?>
 									<li>
 										<a href="<?php echo esc_url(get_permalink($child->ID)); ?>">
 											<?php echo esc_html($child->post_title); ?>
 										</a>
 									</li>
-								<?php endforeach; ?>
+								<?php } ?>
 							</ul>
 						</div>
 					</li>
-				<?php endforeach; ?>
+				<?php } ?>
 
 				<!-- Разное (dropdown из одиночных верхнеуровневых страниц) -->
-				<?php if (!empty($single_pages)): ?>
+				<?php if (! empty($single_pages)) { ?>
 					<li class="menu-item dropdown">
 						<button class="dropdown-toggle dropdown-toggle--js" type="button">
 							<span><?php esc_html_e('Разное', 'pt-claude'); ?></span>
@@ -134,32 +142,36 @@ function menu_limit_words($text, $limit = 3) {
 
 						<div class="dropdown-menu">
 							<ul>
-								<?php foreach ($single_pages as $p): ?>
+								<?php foreach ($single_pages as $p) { ?>
 									<?php
-									$title = get_field('menu_label', $p->ID) ?: $p->post_title;
-									$link  = get_permalink($p->ID);
-									?>
+				                    $title = get_field('menu_label', $p->ID) ?: $p->post_title;
+								    $link = get_permalink($p->ID);
+								    ?>
 									<li>
 										<a href="<?php echo esc_url($link); ?>">
 											<?php echo esc_html($title); ?>
 										</a>
 									</li>
-								<?php endforeach; ?>
+								<?php } ?>
 							</ul>
 						</div>
 					</li>
-				<?php endif; ?>
+				<?php } ?>
 
 				<!-- Таксономии -->
-				<?php foreach ($extra_taxonomies as $tax): ?>
+				<?php foreach ($extra_taxonomies as $tax) { ?>
 					<?php
-					$tax_obj = get_taxonomy($tax);
+                    $tax_obj = get_taxonomy($tax);
 
-					if (!$tax_obj) continue;
+				    if (! $tax_obj) {
+				        continue;
+				    }
 
-					$terms = get_terms(['taxonomy' => $tax, 'hide_empty' => false]);
-					if (empty($terms)) continue;
-					?>
+				    $terms = get_terms(['taxonomy' => $tax, 'hide_empty' => false]);
+				    if (empty($terms)) {
+				        continue;
+				    }
+				    ?>
 
 					<li class="menu-item dropdown">
 						<button class="dropdown-toggle dropdown-toggle--js" type="button">
@@ -168,18 +180,18 @@ function menu_limit_words($text, $limit = 3) {
 
 						<div class="dropdown-menu">
 							<ul>
-								<?php foreach ($terms as $term): ?>
+								<?php foreach ($terms as $term) { ?>
 									<li>
 										<a href="<?php echo esc_url(get_term_link($term)); ?>">
 											<?php echo esc_html($term->name); ?>
 										</a>
 									</li>
-								<?php endforeach; ?>
+								<?php } ?>
 							</ul>
 						</div>
 					</li>
 
-				<?php endforeach; ?>
+				<?php } ?>
 
 				<!-- Блог -->
 				<?php
@@ -211,11 +223,11 @@ function menu_limit_words($text, $limit = 3) {
 
 			</ul>
 
-			<?php if ( function_exists( 'icl_get_languages' ) ): ?>
+			<?php if (function_exists('icl_get_languages')) { ?>
 				<div class="language-switcher">
-					<?php do_action( 'wpml_add_language_selector' ); ?>
+					<?php do_action('wpml_add_language_selector'); ?>
 				</div>
-			<?php endif; ?>
+			<?php } ?>
 
 		</div>
 	</nav>
@@ -237,71 +249,77 @@ function menu_limit_words($text, $limit = 3) {
 			</li>
 
 			<!-- Родители с детьми -->
-			<?php $i = 0; foreach ($parents_with_children as $parent): ?>
+			<?php $i = 0;
+foreach ($parents_with_children as $parent) { ?>
 				<?php
-				$title = get_field('menu_label', $parent->ID) ?: $parent->post_title;
+                $title = get_field('menu_label', $parent->ID) ?: $parent->post_title;
 
-				$children = get_pages([
-					'post_type'        => 'page',
-					'parent'           => $parent->ID,
-					'sort_column'      => 'menu_order',
-					'sort_order'       => 'ASC',
-					'suppress_filters' => false,
-				]);
-				?>
+    $children = get_pages([
+        'post_type' => 'page',
+        'parent' => $parent->ID,
+        'sort_column' => 'menu_order',
+        'sort_order' => 'ASC',
+        'suppress_filters' => false,
+    ]);
+    ?>
 
 				<li class="m-item">
 					<button class="m-toggle" data-mobile-index="<?php echo $i; ?>">
 						<?php echo esc_html($title); ?>
 					</button>
 
-					<?php if ($children): ?>
+					<?php if ($children) { ?>
 						<ul class="m-sub">
-							<?php foreach ($children as $child): ?>
+							<?php foreach ($children as $child) { ?>
 								<li>
 									<a href="<?php echo esc_url(get_permalink($child->ID)); ?>">
 										<?php echo esc_html($child->post_title); ?>
 									</a>
 								</li>
-							<?php endforeach; ?>
+							<?php } ?>
 						</ul>
-					<?php endif; ?>
+					<?php } ?>
 				</li>
 
-				<?php $i++; endforeach; ?>
+				<?php $i++;
+} ?>
 
 			<!-- Разное (submenu из одиночных страниц) -->
-			<?php if (!empty($single_pages)): ?>
+			<?php if (! empty($single_pages)) { ?>
 				<li class="m-item">
 					<button class="m-toggle" type="button">
 						<?php esc_html_e('Разное', 'pt-claude'); ?>
 					</button>
 
 					<ul class="m-sub">
-						<?php foreach ($single_pages as $p): ?>
+						<?php foreach ($single_pages as $p) { ?>
 							<?php
-							$title = get_field('menu_label', $p->ID) ?: $p->post_title;
-							$link  = get_permalink($p->ID);
-							?>
+                            $title = get_field('menu_label', $p->ID) ?: $p->post_title;
+						    $link = get_permalink($p->ID);
+						    ?>
 							<li>
 								<a href="<?php echo esc_url($link); ?>">
 									<?php echo esc_html($title); ?>
 								</a>
 							</li>
-						<?php endforeach; ?>
+						<?php } ?>
 					</ul>
 				</li>
-			<?php endif; ?>
+			<?php } ?>
 
 			<!-- Таксономии -->
-			<?php foreach ($extra_taxonomies as $tax): ?>
+			<?php foreach ($extra_taxonomies as $tax) { ?>
 				<?php
-				$tax_obj = get_taxonomy($tax);
-				if (!$tax_obj) continue;
+                $tax_obj = get_taxonomy($tax);
+			    if (! $tax_obj) {
+			        continue;
+			    }
 
-				$terms = get_terms(['taxonomy' => $tax, 'hide_empty' => false]);
-				if (empty($terms)) continue;
-				?>
+			    $terms = get_terms(['taxonomy' => $tax, 'hide_empty' => false]);
+			    if (empty($terms)) {
+			        continue;
+			    }
+			    ?>
 
 				<li class="m-item">
 					<button class="m-toggle" type="button">
@@ -309,17 +327,17 @@ function menu_limit_words($text, $limit = 3) {
 					</button>
 
 					<ul class="m-sub">
-						<?php foreach ($terms as $term): ?>
+						<?php foreach ($terms as $term) { ?>
 							<li>
 								<a href="<?php echo esc_url(get_term_link($term)); ?>">
 									<?php echo esc_html($term->name); ?>
 								</a>
 							</li>
-						<?php endforeach; ?>
+						<?php } ?>
 					</ul>
 				</li>
 
-			<?php endforeach; ?>
+			<?php } ?>
 
 			<!-- Блог -->
 			<?php if (!empty($blog_posts)): ?>
