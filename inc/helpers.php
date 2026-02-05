@@ -14,3 +14,4 @@ require get_template_directory().'/inc/helpers/get-terms-links.php';
 require get_template_directory().'/inc/helpers/get-terms-list.php';
 require get_template_directory().'/inc/helpers/get-related-posts.php';
 require get_template_directory().'/inc/helpers/get-reading-time.php';
+require get_template_directory().'/inc/helpers/translations.php';
