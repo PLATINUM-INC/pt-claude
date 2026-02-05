@@ -39,6 +39,12 @@ add_action('after_setup_theme', 'theme_setup', 0);
 function theme_activation()
 {
     update_option('posts_per_page', 60);
+
+    // Delete default "Hello World" post (ID 1)
+    $default_post = get_post(1);
+    if ($default_post && $default_post->post_type === 'post') {
+        wp_delete_post(1, true);
+    }
 }
 
 add_action('after_switch_theme', 'theme_activation');
